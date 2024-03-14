@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+      TG
       <button onClick={onClose}>Close</button>
     </div>
   );
