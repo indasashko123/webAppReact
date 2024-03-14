@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import { MainSreen } from './components/mainScreen/mainSreen';
 
 const tg = window.Telegram.WebApp;
 
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      TG
+      <MainSreen></MainSreen>
       <button onClick={onClose}>Close</button>
     </div>
   );
