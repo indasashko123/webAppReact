@@ -42,6 +42,14 @@ build/Release
 node_modules/
 jspm_packages/
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+
+
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -128,3 +136,18 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea
