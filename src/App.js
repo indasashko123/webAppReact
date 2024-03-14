@@ -8,7 +8,6 @@ function App() {
 
   useEffect( ()=> {
     tg.ready();
-//    console.log(tg);
   }, []);
 
   const onClose = () => {
@@ -17,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <MainSreen></MainSreen>
+      <MainSreen props={tg}></MainSreen>
       <button onClick={onClose}>Close</button>
     </div>
   );

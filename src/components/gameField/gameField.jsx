@@ -1,10 +1,8 @@
 import React from "react";
-const tg = window.Telegram.WebApp;
 
-
-export const GameField = () => {
+export const GameField = (props) => {
     
-    console.log(tg.user);
+    console.log(props);
     
     return  (
        <div className="GameFiled-Container">
