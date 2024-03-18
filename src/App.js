@@ -9,8 +9,8 @@ function App() {
 
   const [tg, setTg] = useState(window.Telegram.WebApp);
   
- 
-  console.log(tg);
+  const objString = JSON.stringify(tg);
+  console.log(objString);
 
   //tg.showAlert(`Добро пожаловать, @${tg.WebAppUser.username}.`);
   useEffect( ()=> {
@@ -32,6 +32,7 @@ function App() {
     <div className="App">
       <MainSreen props={tg}></MainSreen>
       <button onClick={onClose}>Close</button>
+      <p> {objString}</p>
       <p> {initData}</p>
       <p> {initDataUnsafe}</p>
       <p> {themeParams}</p>
