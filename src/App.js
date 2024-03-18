@@ -9,6 +9,10 @@ function App() {
 
   const [tg, setTg] = useState(window.Telegram.WebApp);
   
+ 
+  console.log(tg);
+
+  tg.showAlert(`Добро пожаловать, @${tg.WebAppUser.username}.`);
   useEffect( ()=> {
     tg.ready();
   }, []);
