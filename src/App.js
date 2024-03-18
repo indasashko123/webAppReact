@@ -14,7 +14,6 @@ function App() {
   const [initDataUnsafe, setinitDataUnsafe] = useState(tg.initDataUnsafe ? toString(tg.initDataUnsafe) : "nope");
   const [themeParams, setthemeParams] = useState(tg.themeParams ? toString(tg.themeParams) : "nope");
   const [user, setUser] = useState();
-  const [photo, setPhoto] = useState();
 /*
   i = {
     query_id : "AAGB368eAAAAAIHfrx7k_J5o",
@@ -38,27 +37,7 @@ function App() {
     setobjString(JSON.stringify(tg,null, 2));
     setReady(true);
     console.log(tg);
-    let photo;
-    try {
-      tg.getUserProfilePhotos({ limit: 1 })
-      .then((response) => {
-          const photos = response.photos;
-          if (photos.length > 0) {
-              photo = photos[0][0]; 
-              console.log(photo);
-          } else {
-              console.log('Пользователь не загрузил фотографий.');
-          }
-      })
-      .catch((error) => {
-          console.error('Ошибка при получении фото пользователя:', error);
-      });
-      setPhoto(photo);
-    } catch {
-      console.log("cathc0");
-    }
-    setUser({...tg.initDataUnsafe, photo });
-    
+    setUser(tg.initDataUnsafe.user);
   }, 
     []);
 
@@ -72,9 +51,6 @@ function App() {
       <button onClick={onClose}>Close</button>
       <p> { "Ready - " + ready}</p>
       <p> {objString}</p>
-      <p> {initData}</p>
-      <p> {initDataUnsafe}</p>
-      <p> {themeParams}</p>
       <p> { tg.version} </p>
       <p> {tg.viewportHeight} </p>
       <p> {tg.viewportStableHeight} </p>
