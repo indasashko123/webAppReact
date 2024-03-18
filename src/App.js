@@ -14,7 +14,7 @@ function App() {
   const [initDataUnsafe, setinitDataUnsafe] = useState(tg.initDataUnsafe ? toString(tg.initDataUnsafe) : "nope");
   const [themeParams, setthemeParams] = useState(tg.themeParams ? toString(tg.themeParams) : "nope");
   const [user, setUser] = useState();
-
+/*
   i = {
     query_id : "AAGB368eAAAAAIHfrx7k_J5o",
     user : {
@@ -28,7 +28,7 @@ function App() {
     auth_date : 1710725231,
     hash : "5a02d84576d6f82336c715e3dda819a7d52cee52fdae6b4afa0ea5f4a524bcf6"
   };
-  
+*/
   useEffect( ()=> {
     tg.ready();
     setinitData(tg.initData ? toString(tg.initData) : "nope");
