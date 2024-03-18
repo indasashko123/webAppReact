@@ -5,8 +5,6 @@ import { GameField } from "../gameField/gameField";
 
 export const MainSreen = (props) => {
 
-
-
     return (
         <div>
             <GuildData></GuildData>
