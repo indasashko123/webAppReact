@@ -12,10 +12,14 @@ function App() {
  
   console.log(tg);
 
-  tg.showAlert(`Добро пожаловать, @${tg.WebAppUser.username}.`);
+  //tg.showAlert(`Добро пожаловать, @${tg.WebAppUser.username}.`);
   useEffect( ()=> {
     tg.ready();
-  }, []);
+    setinitData(tg.initData ? toString(tg.initData) : "nope");
+    setinitDataUnsafe(tg.initDataUnsafe ? toString(tg.initDataUnsafe) : "nope");
+    setthemeParams(tg.themeParams ? toString(tg.themeParams) : "nope");  
+  }, 
+    []);
 
   const onClose = () => {
     tg.close();
