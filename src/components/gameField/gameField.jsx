@@ -11,7 +11,7 @@ export const GameField = (props) => {
   } else {
     return  (
       <div className="GameFiled-Container">
-           <img alt="user foto"></img>
+           <img alt="no foto"></img>
       </div>
    )
   }
