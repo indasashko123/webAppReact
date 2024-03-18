@@ -13,15 +13,31 @@ function App() {
   const [initData, setinitData] = useState(tg.initData ? toString(tg.initData) : "nope");
   const [initDataUnsafe, setinitDataUnsafe] = useState(tg.initDataUnsafe ? toString(tg.initDataUnsafe) : "nope");
   const [themeParams, setthemeParams] = useState(tg.themeParams ? toString(tg.themeParams) : "nope");
+  const [user, setUser] = useState();
 
-
+  i = {
+    query_id : "AAGB368eAAAAAIHfrx7k_J5o",
+    user : {
+      id : 514842497,
+      first_name :"Некий",
+      last_name :"Человек",
+      username : "AlexKrahm",
+      language_code : "ru",
+      allows_write_to_pm :true
+    },
+    auth_date : 1710725231,
+    hash : "5a02d84576d6f82336c715e3dda819a7d52cee52fdae6b4afa0ea5f4a524bcf6"
+  };
+  
   useEffect( ()=> {
     tg.ready();
     setinitData(tg.initData ? toString(tg.initData) : "nope");
     setinitDataUnsafe(tg.initDataUnsafe ? toString(tg.initDataUnsafe) : "nope");
     setthemeParams(tg.themeParams ? toString(tg.themeParams) : "nope");
-    setobjString(JSON.stringify(tg));
+    setobjString(JSON.stringify(tg,null, 2));
     setReady(true);
+    setUser(tg.initDataUnsafe);
+    
   }, 
     []);
 
@@ -30,7 +46,7 @@ function App() {
   }
   return (
     <div className="App">
-      <MainSreen props={tg}></MainSreen>
+      <MainSreen props={user}></MainSreen>
       <button onClick={onClose}>Close</button>
       <p> { "Ready - " + ready}</p>
       <p> {objString}</p>
@@ -40,6 +56,7 @@ function App() {
       <p> { tg.version} </p>
       <p> {tg.viewportHeight} </p>
       <p> {tg.viewportStableHeight} </p>
+   
     </div>
   );
 }
