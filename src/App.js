@@ -6,6 +6,9 @@ const tg = window.Telegram.WebApp;
 
 function App() {
 
+
+  const [tg, setTg] = useState(window.Telegram.WebApp);
+  
   useEffect( ()=> {
     tg.ready();
   }, []);
