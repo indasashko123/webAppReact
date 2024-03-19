@@ -3,13 +3,12 @@ import { Footer } from "../footer/footer";
 import { GuildData } from "../guildData/GuildData";
 import { GameField } from "../gameField/gameField";
 
-export const MainSreen = (props) => {
-
-    
+export const MainSreen = (user) => {
+    console.log("user" ,user);
     return (
         <div>
             <GuildData></GuildData>
-            <GameField props={props}></GameField>
+            <GameField ></GameField>
             <Footer></Footer>
         </div>
     )

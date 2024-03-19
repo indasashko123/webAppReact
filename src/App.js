@@ -36,7 +36,7 @@ function App() {
     setthemeParams(tg.themeParams ? toString(tg.themeParams) : "nope");
     setobjString(JSON.stringify(tg,null, 2));
     setReady(true);
-    console.log(tg);
+    //console.log(tg);
     setUser(tg.initDataUnsafe.user);
   }, 
     []);
